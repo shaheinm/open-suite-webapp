@@ -1,7 +1,7 @@
 FROM tomcat:8
 
-COPY ./build/tomcat/axelor-tomcat.properties /usr/local/tomcat/conf/application.properties
-RUN sed 's|{java.io.tmpdir}/axelor|{user.home}/.axelor/axelor-erp/5.0|g' -i /opt/tomcat/application.properties
+COPY ./build/resources/main/application.properties /usr/local/tomcat/conf/application.properties
+RUN sed 's|{java.io.tmpdir}/axelor|{user.home}/.axelor/axelor-erp/5.0|g' -i /usr/local//tomcat/conf/application.properties
 
 COPY ./build/libs/axelor-erp-*.war /usr/local/tomcat/webapps/ROOT.war
 
