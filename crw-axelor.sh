@@ -5,7 +5,7 @@ run_axelor () {
   git submodule update
 
   # Connect to dev database in cluster
-  sed -i -E 's#^(db.default.url[[:blank:]]*=[[:blank:]]*).*#\1jdbc:postgresql://172.30.35.20:5432/axelor#'
+  sed -i -E 's#^(db.default.url[[:blank:]]*=[[:blank:]]*).*#\1jdbc:postgresql://172.30.35.20:5432/axelor#' src/main/resources/application.properties
 
   ./gradlew test build
   ./gradlew run
